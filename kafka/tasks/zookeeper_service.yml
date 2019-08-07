@@ -1,0 +1,12 @@
+- name: Create service file
+  copy:
+    src: ../files/zookeeper.service
+    dest: /lib/systemd/system/
+    mode: 0644
+    owner: root
+    group: root
+- name: Starting Zookeeper Service
+  service:
+    name: zookeeper
+    state: started
+    enabled: yes

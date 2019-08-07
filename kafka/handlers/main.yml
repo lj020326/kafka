@@ -1,0 +1,5 @@
+---
+# handlers file for kafka
+- name: reboot server
+  reboot:
+    post_reboot_delay: 60

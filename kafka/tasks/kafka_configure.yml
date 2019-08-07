@@ -1,0 +1,14 @@
+- name: Configure kafka
+  command: cat /var/zookeeper/myid
+  register: server_id
+- lineinfile:
+    path: /usr/local/kafka/config/server.properties
+    regexp: "{{ item.regxp }}"
+    line: "{{ item.lin }}"
+  with_items:
+    - { regxp: '^broker.id.*', lin: 'broker.id={{server_id.stdout}}' }
+    - { regxp: '^listeners=.*', lin: 'listeners=PLAINTEXT://{{ansible_default_ipv4.address}}:9092' }
+    - { regxp: '^num.partitions=.*', lin: 'num.partitions={{nodes}}' }
+    - { regxp: 'log.dirs=.*', lin: 'log.dirs=/usr/local/kafka/logs' }
+    - { regxp: '^delete.topic.enable=.*', lin: 'delete.topic.enable=true' }
+    - { regxp: '^zookeeper.connect=.*', lin: 'zookeeper.connect={{IP1}}:2181,{{IP2}}:2181,{{IP3}}:2181' }

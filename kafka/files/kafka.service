@@ -1,0 +1,14 @@
+[Unit]
+Description=Kafka Service
+Requires=network.target
+After=network.target zookeeper.service
+
+[Service]
+User=kafka
+Group=kafka
+ExecStart=/usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server.properties
+ExecStop=/usr/local/kafka/bin/kafka-server-stop.sh
+PIDFile=/var/run/kafka/kafka_server.pid
+
+[Install]
+WantedBy=multi-user.target

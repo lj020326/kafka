@@ -1,0 +1,24 @@
+- name: create zookeeper user
+  user:
+    name: zookeeper
+    home: /var/zookeeper
+- name: Create zookeeper home directory
+  file:
+    path: /var/zookeeper
+    state: directory
+    mode: 0755
+    owner: zookeeper
+    group: zookeeper
+- name: create zookeeper directory
+  file:
+    path: /usr/local/zookeeper
+    state: directory
+    mode: 0775
+    owner: zookeeper
+    group: zookeeper
+- name: Download & Install zookeeper
+  get_url:
+    url: https://archive.apache.org/dist/zookeeper/{{zookeeper_pkg}}/{{zookeeper_pkg}}.tar.gz
+    dest: /usr/local/zookeeper/
+    validate_certs: no
+- shell: 'cd /usr/local/zookeeper && tar -xvf /usr/local/zookeeper/{{zookeeper_pkg}}.tar.gz && cd /usr/local/zookeeper/{{zookeeper_pkg}} && mv * /usr/local/zookeeper/ && cd /usr/local/zookeeper/  && rm -rf {{zookeeper_pkg}} {{zookeeper_pkg}}.tar.gz && chown -R zookeeper:zookeeper /usr/local/zookeeper/'

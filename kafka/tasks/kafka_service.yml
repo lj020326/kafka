@@ -1,0 +1,13 @@
+- name: Create service file
+  copy:
+    src: ../files/kafka.service
+    dest: /lib/systemd/system/
+    mode: 0644
+    owner: root
+    group: root
+- name: Starting Kafka Service
+  service:
+    name: kafka
+    state: started
+    enabled: yes
+

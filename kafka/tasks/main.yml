@@ -1,0 +1,12 @@
+---
+# tasks file for kafka
+- import_tasks: check_firewall.yml
+- import_tasks: check_selinux.yml
+- meta: flush_handlers
+- import_tasks: jdk_install.yml
+- import_tasks: zookeeper_install.yml
+- import_tasks: zookeeper_configure.yml
+- import_tasks: zookeeper_service.yml
+- import_tasks: kafka_install.yml
+- import_tasks: kafka_configure.yml
+- import_tasks: kafka_service.yml

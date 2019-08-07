@@ -1,0 +1,5 @@
+- name: Change status of selinux
+  selinux:
+    state: disabled
+  notify:
+    - reboot server

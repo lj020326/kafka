@@ -1,0 +1,11 @@
+- name: create kafka user
+  user:
+    name: kafka
+    home: /usr/local/kafka
+- name: Download & Install kafka
+  get_url:
+    url: https://archive.apache.org/dist/kafka/2.0.0/{{kafka_pkg}}.tgz
+    dest: /usr/local/kafka/
+    validate_certs: no
+- shell: 'cd /usr/local/kafka && tar -xvf /usr/local/kafka/{{kafka_pkg}}.tgz && cd /usr/local/kafka/{{kafka_pkg}} && mv * /usr/local/kafka/ && cd /usr/local/kafka/  && rm -rf {{kafka_pkg}}* && chown -R kafka:kafka /usr/local/kafka/'
+

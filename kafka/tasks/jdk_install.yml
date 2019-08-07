@@ -1,0 +1,11 @@
+- name: Gather packages info
+  package_facts:
+    manager: auto
+- name: Install Oracle Java if not present
+  copy:
+    src: ../files/{{java_package}}
+    dest: /tmp/
+  when: '"jdk1.8" not in ansible_facts.packages'
+- shell: yum install -y /tmp/{{java_package}}
+  when: '"jdk1.8" not in ansible_facts.packages'
+
