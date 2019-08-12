@@ -41,7 +41,7 @@ How to Use this Role
 
 Once you have setup above all requirements then simply logon to the Ansible Master server with your specified ansible user and go to directory /etc/ansible/ and run below command :-
 
-<h5>ansible-playbook kafka.yml</h5>
+<h4>ansible-playbook kafka.yml</h4>
 
 License
 -------
