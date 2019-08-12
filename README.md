@@ -17,7 +17,7 @@ This Role works on 3 node architecture. User executing this Role must require li
 <br>10.Y.Y.Y
 <br>10.Z.Z.Z
 
-5) Oracle JDK 8 needs to be downloaded and kept inside ./roles/kafka/files/ directory. You can download Oracle JDK 8 from below link :
+5) Oracle JDK 8 needs to be downloaded and kept inside ./roles/kafka/files/ directory. You can download Oracle JDK 8 rpm (Linux x64) from below link :
 <br>https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 Role Variables
@@ -39,9 +39,46 @@ This Role does not have any kind of dependencies on any other role or playbook.
 How to Use this Role
 --------------------
 
-Once you have setup above all requirements then simply logon to the Ansible Master server with your specified ansible user and go to directory /etc/ansible/ and run below command :-
+This Role has been tested and working fine on Centos-7 & Redhat-7 machines
+1) Install Ansible on Master - yum install ansible
 
-<h4>ansible-playbook kafka.yml</h4>
+2) Uncomment inventory line in ansible.cfg :- 
+<br>vi /etc/ansible/ansible.cfg
+<br>inventory = /etc/ansible/hosts                --- Uncomment this line & save and exit
+
+3) Enter kafka client hosts IP in hosts file :-
+<br>vi /etc/ansible/hosts
+<br>[kafka]
+<br>10.X.X.X
+<br>10.Y.Y.Y
+<br>10.Z.Z.Z
+
+##Replace the IP with your client machines IP
+4) Create a user for example, ansible on master and all client machines and provide sudo access to it :-
+<br>useradd ansible
+<br>passwd ansible         -- enter any password
+<br>
+<br>visudo
+<br>ansible		ALL=(ALL)	NOPASSWD: ALL             ## Enter this line at end of the file & save and exit
+
+5) Create Password less authentication from Master server to all client machines :-
+<br>Login using ansible user created in above step: su - ansible
+<br>ssh-keygen -t rsa                -- Command should be entered only on Ansible Master server
+<br>No need to enter passphrase, just press enter on all steps
+
+6) Copy the RSA key from master to all client machines :-
+<br>ssh-copy-id <client IP>           --- Enter password for 1st time and from next time it will have passwordless authentication. Make sure you do this for all 3 client machines
+
+7) Now copy or download the git code in your ansible master server :-
+<br>git clone git@github.com:aliattri52/Kafka.git
+
+8) Copy the kafka folder inside it in /etc/ansible/roles/ & kafka.yml in /etc/ansible/ :-
+<br>cp -r ./Kafka/kafka/ /etc/ansible/roles/
+<br>cp ./Kafka/kafka.yml /etc/ansible/
+
+9)Once you have setup above all requirements then simply logon to the Ansible Master server with your specified ansible user and go to directory /etc/ansible/ and run below command :-
+<br>cd /etc/ansible/
+<br><h4>ansible-playbook kafka.yml</h4>
 
 License
 -------
