@@ -57,7 +57,6 @@ This Role has been tested and working fine on Centos-7 & Redhat-7 machines
 4) Create a user for example, ansible on master and all client machines and provide sudo access to it :-
 <br>$useradd ansible
 <br>$passwd ansible        &emsp; -- enter any password
-<br>
 <br>$visudo
 <br>ansible		&emsp; ALL=(ALL)	&emsp; NOPASSWD: ALL             &emsp; ## Enter this line at end of the file & save and exit
 
