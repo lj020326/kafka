@@ -12,13 +12,13 @@ This Role works on 3 node architecture. User executing this Role must require li
 3) This Role must be copied inside /etc/ansible/ diectory of master server. Playbook kafka.yml must be in /etc/ansible/ directory and kafka folder must be in /etc/ansible/roles/ directory.
 4) Host group kafka must be defined in /etc/ansible/hosts file having all 3 IPs of client machines on which kafka needs to be installed. For example :-
 
-[kafka] \n
-10.X.X.X \n
-10.Y.Y.Y \n
-10.Z.Z.Z
+[kafka]
+<br>10.X.X.X
+<br>10.Y.Y.Y
+<br>10.Z.Z.Z
 
-5) Oracle JDK 8 needs to be downloaded and kept inside ./roles/kafka/files/ directory. You can download Oracle JDK 8 from below link : \n
-https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+5) Oracle JDK 8 needs to be downloaded and kept inside ./roles/kafka/files/ directory. You can download Oracle JDK 8 from below link :
+<br>https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 Role Variables
 --------------
@@ -41,7 +41,7 @@ How to Use this Role
 
 Once you have setup above all requirements then simply logon to the Ansible Master server with your specified ansible user and go to directory /etc/ansible/ and run below command :-
 
-<h3>ansible-playbook kafka.yml</h3>
+<h5>ansible-playbook kafka.yml</h5>
 
 License
 -------
