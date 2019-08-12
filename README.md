@@ -53,6 +53,7 @@ This Role has been tested and working fine on Centos-7 & Redhat-7 machines
 <br>10.Z.Z.Z
 
 ##Replace the IP with your client machines IP
+
 4) Create a user for example, ansible on master and all client machines and provide sudo access to it :-
 <br>$useradd ansible
 <br>$passwd ansible        &emsp; -- enter any password
