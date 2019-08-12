@@ -75,7 +75,7 @@ This Role has been tested and working fine on Centos-7 & Redhat-7 machines
 <br>$cp -r ./Kafka/kafka/ /etc/ansible/roles/
 <br>$cp ./Kafka/kafka.yml /etc/ansible/
 
-9)Once you have setup above all requirements then simply logon to the Ansible Master server with your specified ansible user and go to directory /etc/ansible/ and run below command :-
+9) Once you have setup above all requirements then simply logon to the Ansible Master server with your specified ansible user and go to directory /etc/ansible/ and run below command :-
 <br>$cd /etc/ansible/
 <br><h4>$ansible-playbook kafka.yml</h4>
 
