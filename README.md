@@ -54,30 +54,30 @@ This Role has been tested and working fine on Centos-7 & Redhat-7 machines
 
 ##Replace the IP with your client machines IP
 4) Create a user for example, ansible on master and all client machines and provide sudo access to it :-
-<br>useradd ansible
-<br>passwd ansible        &emsp; -- enter any password
+<br>$useradd ansible
+<br>$passwd ansible        &emsp; -- enter any password
 <br>
-<br>visudo
-<br>ansible		&emps; ALL=(ALL)	&emsp; NOPASSWD: ALL             &emps; ## Enter this line at end of the file & save and exit
+<br>$visudo
+<br>ansible		&emsp; ALL=(ALL)	&emsp; NOPASSWD: ALL             &emsp; ## Enter this line at end of the file & save and exit
 
 5) Create Password less authentication from Master server to all client machines :-
 <br>Login using ansible user created in above step: su - ansible
-<br>ssh-keygen -t rsa               &emsp; -- Command should be entered only on Ansible Master server
+<br>$ssh-keygen -t rsa               &emsp; -- Command should be entered only on Ansible Master server
 <br>No need to enter passphrase, just press enter on all steps
 
 6) Copy the RSA key from master to all client machines :-
-<br>ssh-copy-id <client IP>          &emsp; --- Enter password for 1st time and from next time it will have passwordless authentication. Make sure you do this for all 3 client machines
+<br>$ssh-copy-id <client IP>          &emsp; --- Enter password for 1st time and from next time it will have passwordless authentication. Make sure you do this for all 3 client machines
 
 7) Now copy or download the git code in your ansible master server :-
-<br>git clone git@github.com:aliattari52/Kafka.git
+<br>$git clone git@github.com:aliattari52/Kafka.git
 
 8) Copy the kafka folder inside it in /etc/ansible/roles/ & kafka.yml in /etc/ansible/ :-
-<br>cp -r ./Kafka/kafka/ /etc/ansible/roles/
-<br>cp ./Kafka/kafka.yml /etc/ansible/
+<br>$cp -r ./Kafka/kafka/ /etc/ansible/roles/
+<br>$cp ./Kafka/kafka.yml /etc/ansible/
 
 9)Once you have setup above all requirements then simply logon to the Ansible Master server with your specified ansible user and go to directory /etc/ansible/ and run below command :-
-<br>cd /etc/ansible/
-<br><h4>ansible-playbook kafka.yml</h4>
+<br>$cd /etc/ansible/
+<br><h4>$ansible-playbook kafka.yml</h4>
 
 License
 -------
