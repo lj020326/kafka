@@ -55,18 +55,18 @@ This Role has been tested and working fine on Centos-7 & Redhat-7 machines
 ##Replace the IP with your client machines IP
 4) Create a user for example, ansible on master and all client machines and provide sudo access to it :-
 <br>useradd ansible
-<br>passwd ansible        &emps; -- enter any password
+<br>passwd ansible        &emsp; -- enter any password
 <br>
 <br>visudo
-<br>ansible		&emps;ALL=(ALL)	&emsp;NOPASSWD: ALL             &emps;## Enter this line at end of the file & save and exit
+<br>ansible		&emps; ALL=(ALL)	&emsp; NOPASSWD: ALL             &emps; ## Enter this line at end of the file & save and exit
 
 5) Create Password less authentication from Master server to all client machines :-
 <br>Login using ansible user created in above step: su - ansible
-<br>ssh-keygen -t rsa               &emps; -- Command should be entered only on Ansible Master server
+<br>ssh-keygen -t rsa               &emsp; -- Command should be entered only on Ansible Master server
 <br>No need to enter passphrase, just press enter on all steps
 
 6) Copy the RSA key from master to all client machines :-
-<br>ssh-copy-id <client IP>          &emps; --- Enter password for 1st time and from next time it will have passwordless authentication. Make sure you do this for all 3 client machines
+<br>ssh-copy-id <client IP>          &emsp; --- Enter password for 1st time and from next time it will have passwordless authentication. Make sure you do this for all 3 client machines
 
 7) Now copy or download the git code in your ansible master server :-
 <br>git clone git@github.com:aliattari52/Kafka.git
