@@ -74,6 +74,7 @@ This Role has been tested and working fine on Centos-7 & Redhat-7 machines
 8) Copy the kafka folder inside it in /etc/ansible/roles/ & kafka.yml in /etc/ansible/ :-
 <br>$cp -r ./Kafka/kafka/ /etc/ansible/roles/
 <br>$cp ./Kafka/kafka.yml /etc/ansible/
+<br>Also make sure to copy Oracle JDK 8 rpm to /etc/ansible/role/kafka/files/
 
 9) Once you have setup above all requirements then simply logon to the Ansible Master server with your specified ansible user and go to directory /etc/ansible/ and run below command :-
 <br>$cd /etc/ansible/
