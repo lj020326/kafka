@@ -1,3 +1,5 @@
+---
+
 - hosts: kafka
   become: true
   roles:
