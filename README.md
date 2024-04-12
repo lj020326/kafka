@@ -14,13 +14,17 @@ The Sender cluster reads data from Apache Kafka and performs processing and send
 This Role works on 3 node architecture. User executing this Role must require lists :-
 1) Ansible Master Linux VM ( having ansible v2.7 or above) with user having passwordless access on all client machines.
 2) Three Linux VMs or Physical machines (clients) having a same user as ansible master server with full sudo access (NOPASSWD: ALL)
-3) This Role must be copied inside /etc/ansible/ diectory of master server. Playbook kafka.yml must be in /etc/ansible/ directory and kafka folder must be in /etc/ansible/roles/ directory.
-4) Host group kafka must be defined in /etc/ansible/hosts file having all 3 IPs of client machines on which kafka needs to be installed. For example :-
-<br>[kafka]
-<br>10.X.X.X
-<br>10.Y.Y.Y
-<br>10.Z.Z.Z
-
+3) Host group kafka must be defined in the inventory/hosts file having all 3 IPs of client machines on which kafka needs to be installed. 
+For example, hosts.yml:
+```yaml
+all:
+  children:
+    kafka:
+      10.X.X.X: {}
+      10.Y.Y.Y: {}
+      10.Z.Z.Z: {}
+      
+```
 5) Oracle JDK 8 needs to be downloaded and kept inside ./roles/kafka/files/ directory. You can download Oracle JDK 8 rpm (Linux x64) from below link :
 <br>https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
