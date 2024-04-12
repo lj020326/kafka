@@ -7,7 +7,7 @@
     dest: /usr/local/zookeeper/conf/zoo_sample.cfg
     insertafter: EOF
     state: present
-    content: "\nserver.1={{IP1}}:2888:3888\nserver.2={{IP2}}:2888:3888\nserver.3={{IP3}}:2888:3888\n"
+    content: "\nserver.1={{bootstrap_kafka__ip1}}:2888:3888\nserver.2={{bootstrap_kafka__ip2}}:2888:3888\nserver.3={{bootstrap_kafka__ip3}}:2888:3888\n"
 - name: Rename Configuration file
   copy:
     src: /usr/local/zookeeper/conf/zoo_sample.cfg
@@ -47,12 +47,12 @@
 - copy:
     content: '1'
     dest: /var/zookeeper/myid
-  when: 'ansible_default_ipv4.address == IP1'
+  when: 'ansible_default_ipv4.address == bootstrap_kafka__ip1'
 - copy:
     content: '2'
     dest: /var/zookeeper/myid
-  when: 'ansible_default_ipv4.address == IP2'
+  when: 'ansible_default_ipv4.address == bootstrap_kafka__ip2'
 - copy:
     content: '3'
     dest: /var/zookeeper/myid
-  when: 'ansible_default_ipv4.address == IP3'
+  when: 'ansible_default_ipv4.address == bootstrap_kafka__ip3'

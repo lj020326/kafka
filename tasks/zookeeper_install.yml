@@ -18,7 +18,7 @@
     group: zookeeper
 - name: Download & Install zookeeper
   get_url:
-    url: https://archive.apache.org/dist/zookeeper/{{zookeeper_pkg}}/{{zookeeper_pkg}}.tar.gz
+    url: https://archive.apache.org/dist/zookeeper/{{bootstrap_kafka__zookeeper_pkg}}/{{bootstrap_kafka__zookeeper_pkg}}.tar.gz
     dest: /usr/local/zookeeper/
     validate_certs: no
-- shell: 'cd /usr/local/zookeeper && tar -xvf /usr/local/zookeeper/{{zookeeper_pkg}}.tar.gz && cd /usr/local/zookeeper/{{zookeeper_pkg}} && mv * /usr/local/zookeeper/ && cd /usr/local/zookeeper/  && rm -rf {{zookeeper_pkg}} {{zookeeper_pkg}}.tar.gz && chown -R zookeeper:zookeeper /usr/local/zookeeper/'
+- shell: 'cd /usr/local/zookeeper && tar -xvf /usr/local/zookeeper/{{bootstrap_kafka__zookeeper_pkg}}.tar.gz && cd /usr/local/zookeeper/{{bootstrap_kafka__zookeeper_pkg}} && mv * /usr/local/zookeeper/ && cd /usr/local/zookeeper/  && rm -rf {{bootstrap_kafka__zookeeper_pkg}} {{bootstrap_kafka__zookeeper_pkg}}.tar.gz && chown -R zookeeper:zookeeper /usr/local/zookeeper/'

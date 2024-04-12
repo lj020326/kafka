@@ -1,0 +1,7 @@
+---
+# JDK version options for FreeBSD include:
+#   - openjdk
+#   - openjdk6
+#   - openjdk8
+bootstrap_kafka__java_packages:
+  - openjdk

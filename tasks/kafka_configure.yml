@@ -8,7 +8,7 @@
   with_items:
     - { regxp: '^broker.id.*', lin: 'broker.id={{server_id.stdout}}' }
     - { regxp: '^listeners=.*', lin: 'listeners=PLAINTEXT://{{ansible_default_ipv4.address}}:9092' }
-    - { regxp: '^num.partitions=.*', lin: 'num.partitions={{nodes}}' }
+    - { regxp: '^num.partitions=.*', lin: 'num.partitions={{bootstrap_kafka__num_nodes}}' }
     - { regxp: 'log.dirs=.*', lin: 'log.dirs=/usr/local/kafka/logs' }
     - { regxp: '^delete.topic.enable=.*', lin: 'delete.topic.enable=true' }
-    - { regxp: '^zookeeper.connect=.*', lin: 'zookeeper.connect={{IP1}}:2181,{{IP2}}:2181,{{IP3}}:2181' }
+    - { regxp: '^zookeeper.connect=.*', lin: 'zookeeper.connect={{bootstrap_kafka__ip1}}:2181,{{bootstrap_kafka__ip2}}:2181,{{bootstrap_kafka__ip3}}:2181' }

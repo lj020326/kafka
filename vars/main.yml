@@ -1,9 +1,0 @@
----
-# vars file for kafka
-nodes: 3                                     ## Specify the number of nodes of Kafka cluster. Example this is for 3 node cluster so the value will be 3
-IP1: 10.X.X.X                                ## Specify the IP of Kafka Node 1
-IP2: 10.X.X.X                                ## Specify the IP of Kafka Node 2
-IP3: 10.X.X.X                                ## Specify the IP of Kafka Node 3
-java_package: jdk-8u201-linux-x64.rpm        ## Specify the java package name saved inside ~/kafka/files directory. Example jdk-8u201-linux-x64.rpm
-kafka_pkg: kafka_2.11-2.0.0                  ## Specify the Kafka Package version name which will be downloaded from internet. Example kafka_2.11-2.0.0
-zookeeper_pkg: zookeeper-3.4.13              ## Specify the Zookeeper Package version name which will be downloaded from internet. Example zookeeper-3.4.13

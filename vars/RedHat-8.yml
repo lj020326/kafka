@@ -1,0 +1,8 @@
+---
+# JDK version options include:
+#   - java-1.8.0-openjdk
+#   - java-11-openjdk
+#   - java-18-openjdk
+#   - java-latest-openjdk
+bootstrap_kafka__java_packages:
+  - java-11-openjdk

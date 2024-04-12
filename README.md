@@ -30,11 +30,11 @@ all:
 
 This Role has a centralized variable file kept inside ./kafka/vars/main.yml
 The yml consists of below variables :
-1) nodes : 3 (no. of kafka nodes. In our case it is 3)
-2) All 3 IPs of ansible clients needs to be defined as IP1, IP2, IP3 where kafka needs to be installed.
-3) java_package: Need to specify the rpm name of the oracle jdk which you have already downloaded.
-4) kafka_pkg: Need to define the kafka package name along with its version
-5) zookeeper_pkg: Need to define the zookeeper package name along with its version
+1) bootstrap_kafka__num_nodes : 3 (no. of kafka nodes. In our case it is 3)
+2) All 3 IPs of ansible clients needs to be defined as bootstrap_kafka__ip(1,2,3) where kafka needs to be installed.
+3) bootstrap_kafka__java_packages: Need to specify the rpm name of the oracle jdk which you have already downloaded.
+4) bootstrap_kafka__kafka_pkg: Need to define the kafka package name along with its version
+5) bootstrap_kafka__zookeeper_pkg: Need to define the zookeeper package name along with its version
 
 ## Dependencies
 

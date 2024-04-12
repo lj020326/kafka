@@ -7,17 +7,17 @@
 
 - name: "Download kafka"
   ansible.builtin.get_url:
-    url: "https://archive.apache.org/dist/kafka/2.0.0/{{kafka_pkg}}.tgz"
+    url: "https://archive.apache.org/dist/kafka/2.0.0/{{bootstrap_kafka__kafka_pkg}}.tgz"
     dest: /usr/local/kafka/
     validate_certs: no
 
 - name: "Install kafka"
   ansible.builtin.shell:
     cd /usr/local/kafka && \
-    tar -xvf /usr/local/kafka/{{kafka_pkg}}.tgz && \ 
-    cd /usr/local/kafka/{{kafka_pkg}} && \
+    tar -xvf /usr/local/kafka/{{bootstrap_kafka__kafka_pkg}}.tgz && \ 
+    cd /usr/local/kafka/{{bootstrap_kafka__kafka_pkg}} && \
     mv * /usr/local/kafka/ && \
     cd /usr/local/kafka/  && \
-    rm -rf {{kafka_pkg}}* && \
+    rm -rf {{bootstrap_kafka__kafka_pkg}}* && \
     chown -R kafka:kafka /usr/local/kafka/
 

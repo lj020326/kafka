@@ -1,2 +1,21 @@
 ---
 # defaults file for kafka
+
+## Specify the number of nodes of Kafka cluster. Example this is for 3 node cluster so the value will be 3
+bootstrap_kafka__num_nodes: 3
+## Specify the IP of Kafka Node 1
+bootstrap_kafka__ip1: 10.X.X.X
+## Specify the IP of Kafka Node 2
+bootstrap_kafka__ip2: 10.X.X.X
+## Specify the IP of Kafka Node 3
+bootstrap_kafka__ip3: 10.X.X.X
+
+## Specify the java package name saved inside ~/kafka/files directory. Example jdk-8u201-linux-x64.rpm
+bootstrap_kafka__java_packages:
+  - jdk-8u201-linux-x64.rpm
+
+## Specify the Kafka Package version name which will be downloaded from internet. Example kafka_2.11-2.0.0
+bootstrap_kafka__kafka_pkg: kafka_2.11-2.0.0
+
+## Specify the Zookeeper Package version name which will be downloaded from internet. Example zookeeper-3.4.13
+bootstrap_kafka__zookeeper_pkg: zookeeper-3.4.13
