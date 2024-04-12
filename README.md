@@ -25,8 +25,6 @@ all:
       10.Z.Z.Z: {}
       
 ```
-5) Oracle JDK 8 needs to be downloaded and kept inside ./roles/kafka/files/ directory. You can download Oracle JDK 8 rpm (Linux x64) from below link :
-<br>https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 ## Role Variables
 
