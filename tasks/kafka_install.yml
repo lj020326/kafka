@@ -13,11 +13,11 @@
 
 - name: Install kafka
   ansible.builtin.shell:
-    cd /usr/local/kafka && 
-    tar -xvf /usr/local/kafka/{{kafka_pkg}}.tgz && 
-    cd /usr/local/kafka/{{kafka_pkg}} && 
-    mv * /usr/local/kafka/ && 
-    cd /usr/local/kafka/  && 
-    rm -rf {{kafka_pkg}}* && 
+    cd /usr/local/kafka && \
+    tar -xvf /usr/local/kafka/{{kafka_pkg}}.tgz && \ 
+    cd /usr/local/kafka/{{kafka_pkg}} && \
+    mv * /usr/local/kafka/ && \
+    cd /usr/local/kafka/  && \
+    rm -rf {{kafka_pkg}}* && \
     chown -R kafka:kafka /usr/local/kafka/
 
