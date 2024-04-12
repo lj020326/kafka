@@ -7,7 +7,7 @@
 
 - name: Download kafka
   ansible.builtin.get_url:
-    url: https://archive.apache.org/dist/kafka/2.0.0/{{kafka_pkg}}.tgz
+    url: "https://archive.apache.org/dist/kafka/2.0.0/{{kafka_pkg}}.tgz"
     dest: /usr/local/kafka/
     validate_certs: no
 
