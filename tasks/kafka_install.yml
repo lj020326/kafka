@@ -1,17 +1,17 @@
 ---
 
-- name: create kafka user
+- name: "Create kafka user"
   ansible.builtin.user:
     name: kafka
     home: /usr/local/kafka
 
-- name: Download kafka
+- name: "Download kafka"
   ansible.builtin.get_url:
     url: "https://archive.apache.org/dist/kafka/2.0.0/{{kafka_pkg}}.tgz"
     dest: /usr/local/kafka/
     validate_certs: no
 
-- name: Install kafka
+- name: "Install kafka"
   ansible.builtin.shell:
     cd /usr/local/kafka && \
     tar -xvf /usr/local/kafka/{{kafka_pkg}}.tgz && \ 
